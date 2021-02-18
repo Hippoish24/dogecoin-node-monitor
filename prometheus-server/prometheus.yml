@@ -1,0 +1,17 @@
+# https://prometheus.io/docs/prometheus/latest/configuration/configuration/#configuration-file
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'dogecoin'
+
+    static_configs:
+
+      - targets: ['shiba3.hipponode.net:8334']
+        labels:
+          hostname: 'shiba3'
+
+      - targets: ['shiba4.hipponode.net:8334']
+        labels:
+          hostname: 'shiba4'
