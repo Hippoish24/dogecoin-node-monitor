@@ -10,7 +10,7 @@ interval are configurable.
 
 Installation:
 ```sh
-apt install -y pip3
+apt install -y python3-pip
 pip3 install -r requirements.txt
 ```
 
