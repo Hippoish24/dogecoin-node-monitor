@@ -16,6 +16,7 @@ from prometheus_client import start_http_server, Gauge, Counter
 # Create Prometheus metrics to track dogecoind stats.
 DOGECOIN_BLOCKS = Gauge('dogecoin_blocks', 'Block height')
 DOGECOIN_HEADERS = Gauge('dogecoin_headers', 'Number of synced headers')
+DOGECOIN_SIZE_ON_DISK = Gauge('dogecoin_size_on_disk', 'Size of the Dogecoin blockchain on disk')
 DOGECOIN_DIFFICULTY = Gauge('dogecoin_difficulty', 'Difficulty')
 DOGECOIN_PEERS = Gauge('dogecoin_peers', 'Number of peers')
 DOGECOIN_HASHPS = Gauge('dogecoin_hashps', 'Estimated network hash rate per second')
@@ -85,6 +86,7 @@ def refresh_metrics():
 
     DOGECOIN_BLOCKS.set(blockchaininfo['blocks'])
     DOGECOIN_HEADERS.set(blockchaininfo['headers'])
+    DOGECOIN_SIZE_ON_DISK.set(blockchaininfo['size_on_disk'])  # Requires 1.14.3+
     DOGECOIN_PEERS.set(info['connections'])
     DOGECOIN_DIFFICULTY.set(info['difficulty'])
     DOGECOIN_HASHPS.set(hashps)
