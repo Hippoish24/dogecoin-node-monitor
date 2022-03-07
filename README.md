@@ -5,7 +5,7 @@ Node monitor for one or many nodes.  Includes the client script, Prometheus serv
 ## Prometheus Client
 
 On port 8334.  Starts a web server with metrics that can be scraped by the Prometheus server.
-metrics are gathered by running `dogecoin-cli` commands every 30 seconds.  Both the port and
+Metrics are gathered by running `dogecoin-cli` commands every 30 seconds.  Both the port and
 interval are configurable.
 
 Installation:
@@ -50,9 +50,11 @@ Dogecoin dashboard is inspired by this [Bitcoin Node dashboard](https://grafana.
 
 # Deploying
 
-Deploys using Docker Stack.  The volumes in the [docker-compose.yml](docker-compose.yml) file assume that this directory 
-has been dumped into `/home/rancher` on a RancherOS installation - update the binds as needed.
+Deploys using Docker Compose / Swarm.  The volumes in the [docker-compose.yml](docker-compose.yml)
+file are relative to the current directory.
 
-Run using `docker stack deploy -c docker-compose.yml node_monitor`.
+Run using:
+* (Docker Compose) `docker-compose up -d`
+* (Docker Swarm) `docker stack deploy -c docker-compose.yml node_monitor`
 
-You may need to first init the server as a Docker swarm manager with `docker swarm init --advertise-addr <IP address>`.
+You may need to first init the server as a Docker Swarm manager with `docker swarm init --advertise-addr <IP address>`.
