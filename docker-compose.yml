@@ -8,7 +8,7 @@ services:
       - "9090"
     volumes:
       - "prom-data:/prometheus"
-      - "/home/rancher/prometheus-server/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "./prometheus-server/prometheus.yml:/etc/prometheus/prometheus.yml"
 
   # https://grafana.com/docs/grafana/latest/installation/docker/
   # https://grafana.com/docs/grafana/latest/administration/configure-docker/
@@ -20,9 +20,9 @@ services:
       # Main data volume
       - "grafana-data:/var/lib/grafana"
       # Configuration that goes in /etc/grafana
-      - "/home/rancher/grafana/grafana.ini:/etc/grafana/grafana.ini"
-      - "/home/rancher/grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml"
-      - "/home/rancher/grafana/dogecoin.json:/etc/grafana/provisioning/dashboards/dogecoin.json"
+      - "./grafana/grafana.ini:/etc/grafana/grafana.ini"
+      - "./grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml"
+      - "./grafana/dogecoin.json:/etc/grafana/provisioning/dashboards/dogecoin.json"
 
 volumes:
   prom-data:
