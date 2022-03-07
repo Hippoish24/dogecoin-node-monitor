@@ -22,7 +22,7 @@ DOGECOIN_PEERS = Gauge('dogecoin_peers', 'Number of peers')
 DOGECOIN_HASHPS = Gauge('dogecoin_hashps', 'Estimated network hash rate per second')
 
 DOGECOIN_ERRORS = Counter('dogecoin_errors', 'Number of errors detected')
-DOGECOIN_UPTIME = Gauge('dogecoin_uptime', 'Number of seconds the Bitcoin daemon has been running')
+DOGECOIN_UPTIME = Gauge('dogecoin_uptime', 'Number of seconds the Dogecoin daemon has been running')
 
 DOGECOIN_MEMPOOL_BYTES = Gauge('dogecoin_mempool_bytes', 'Size of mempool in bytes')
 DOGECOIN_MEMPOOL_SIZE = Gauge('dogecoin_mempool_size', 'Number of unconfirmed transactions in mempool')
