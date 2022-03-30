@@ -11,8 +11,9 @@ services:
       - "--web.console.libraries=/usr/share/prometheus/console_libraries"
       - "--web.console.templates=/usr/share/prometheus/consoles"
       - "--web.page-title=Dogecoin Metrics Prometheus DB"
-    ports:
-      - "9090"
+    # Uncomment to publish ports to the host machine
+    #ports:
+    #  - "9090"
     volumes:
       - "prom-data:/prometheus"
       - "./prometheus-server/prometheus.yml:/etc/prometheus/prometheus.yml"
