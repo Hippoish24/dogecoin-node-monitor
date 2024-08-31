@@ -50,11 +50,10 @@ Dogecoin dashboard is inspired by this [Bitcoin Node dashboard](https://grafana.
 
 # Deploying
 
-Deploys using Docker Compose / Swarm.  The volumes in the [docker-compose.yml](docker-compose.yml)
+Deploys using Docker Compose or Swarm.  The volumes in the [docker-compose.yml](docker-compose.yml)
 file are relative to the current directory.
 
 Run using:
-* (Docker Compose) `docker-compose up -d`
+* (Docker Compose) `docker compose up -d`
 * (Docker Swarm) `docker stack deploy -c docker-compose.yml node_monitor`
-
-You may need to first init the server as a Docker Swarm manager with `docker swarm init --advertise-addr <IP address>`.
+  * You may need to first init the server as a Docker Swarm manager with `docker swarm init --advertise-addr <IP address>`.
