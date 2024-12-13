@@ -15,3 +15,11 @@ scrape_configs:
       - targets: ['shiba4.hipponode.net:8334']
         labels:
           hostname: 'shiba4'
+
+  # If metrics are behind an HTTPS reverse proxy...
+  - job_name: 'dogecoin-https'
+    scheme: https
+    static_configs:
+      - targets: ['metrics.shiba5.hipponode.net']
+        labels:
+          hostname: 'shiba5'
